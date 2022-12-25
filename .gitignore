@@ -1,0 +1,13 @@
+obj/portfolio.csproj.nuget.dgspec.json
+obj/portfolio.csproj.nuget.g.props
+obj/portfolio.csproj.nuget.g.targets
+obj/project.assets.json
+obj/project.nuget.cache
+obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+obj/Debug/net7.0/portfolio.AssemblyInfo.cs
+obj/Debug/net7.0/portfolio.AssemblyInfoInputs.cache
+obj/Debug/net7.0/portfolio.assets.cache
+obj/Debug/net7.0/portfolio.csproj.AssemblyReference.cache
+obj/Debug/net7.0/portfolio.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net7.0/portfolio.GlobalUsings.g.cs
+obj/Debug/net7.0/project.razor.json
