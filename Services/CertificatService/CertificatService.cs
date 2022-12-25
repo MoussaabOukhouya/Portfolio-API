@@ -10,20 +10,26 @@ namespace portfolio.Services.CertificatService
             new Certificat{Id = 1 , name="test", description="test",image="test",link="test"},
             new Certificat{Id = 2 , name="momo", description="dodo",image="mimi",link="khoko"}};
 
-        public List<Certificat> AddCertificat(Certificat certificat)
+        public async Task<ServiceResponse<List<Certificat>>> AddCertificat(Certificat certificat)
         {
+            var serviceResponse = new ServiceResponse<List<Certificat>>();
             certificats.Add(certificat);
-            return certificats;
+            serviceResponse.data = certificats;
+            return serviceResponse;
         }
 
-        public List<Certificat> GetAllCertificats()
+        public async Task<ServiceResponse<List<Certificat>>> GetAllCertificats()
         {
-            return certificats;
+            var serviceResponse = new ServiceResponse<List<Certificat>>();
+            serviceResponse.data = certificats;
+            return serviceResponse;
         }
 
-        public Certificat GetCertificatById(int Id)
+        public async Task<ServiceResponse<Certificat>> GetCertificatById(int Id)
         {
-            return certificats.FirstOrDefault(c => c.Id == Id) ;
+            var serviceResponse = new ServiceResponse<Certificat>();
+            serviceResponse.data = certificats.FirstOrDefault(c => c.Id == Id);
+            return serviceResponse;
         }
     }
 }
