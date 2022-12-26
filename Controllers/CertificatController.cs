@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using portfolio.dal;
+using portfolio.DTOs.Certificat;
 using portfolio.models;
 using portfolio.Services.CertificatService;
 using System.Linq;
@@ -19,8 +20,9 @@ public class CertificatController : ControllerBase
         _certificatService = certificatService;
     }
 
+
     [HttpGet("GetAll")]
-    public async Task<ActionResult<ServiceResponse<List<Certificat>>>> GetALL()
+    public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> GetALL()
     {
   
         var certificat  = _certificatService.GetAllCertificats();
@@ -29,7 +31,7 @@ public class CertificatController : ControllerBase
     }
 
     [HttpGet("{Id}")]
-    public async Task<ActionResult<ServiceResponse<Certificat>>> GetCertificatById(int Id)
+    public async Task<ActionResult<ServiceResponse<GetCertificatDto>>> GetCertificatById(int Id)
     {
   
         var certificat  = _certificatService.GetCertificatById(Id);
@@ -38,10 +40,10 @@ public class CertificatController : ControllerBase
     }
 
     [HttpPost()]
-    public async Task<ActionResult<ServiceResponse<List<Certificat>>>> AddCertificat(Certificat certificat)
+    public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> AddCertificat(AddCertificatDto addCertificatDto)
     {
   
-        return Ok(await _certificatService.AddCertificat(certificat));
+        return Ok(await _certificatService.AddCertificat(addCertificatDto));
    
     }
 }
