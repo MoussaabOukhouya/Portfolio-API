@@ -29,7 +29,7 @@ namespace portfolio.Services.CertificatService
         public async Task<ServiceResponse<List<GetCertificatDto>>> GetAllCertificats()
         {
             var serviceResponse = new ServiceResponse<List<GetCertificatDto>>();
-            serviceResponse.data =certificats.Select(c => _mapper.Map<GetCertificatDto>(c)).ToList();
+            serviceResponse.data = certificats.Select(c => _mapper.Map<GetCertificatDto>(c)).ToList();
             return serviceResponse;
         }
 
@@ -38,6 +38,29 @@ namespace portfolio.Services.CertificatService
             var serviceResponse = new ServiceResponse<GetCertificatDto>();
             var certificat = certificats.FirstOrDefault(c => c.Id == Id);
             serviceResponse.data = _mapper.Map<GetCertificatDto>(certificat);
+            return serviceResponse;
+        }
+
+        public async Task<ServiceResponse<GetCertificatDto>> UpdateCertificat(UpdateCertificatDto updateCertificatDto)
+        {
+            var serviceResponse = new ServiceResponse<GetCertificatDto>();
+            try
+            {
+                var certificat = certificats.FirstOrDefault(c => c.Id == updateCertificatDto.Id);
+                if (certificat is null)
+                    throw new Exception($"The certificat with the Id: '{certificat.Id}' notfound.");
+
+                certificat.name = updateCertificatDto.name;
+                certificat.description = updateCertificatDto.description;
+                certificat.image = updateCertificatDto.image;
+                certificat.link = updateCertificatDto.link;
+                serviceResponse.data = _mapper.Map<GetCertificatDto>(certificat);
+            }
+            catch (Exception ex)
+            {
+                serviceResponse.success = false;
+                serviceResponse.message = ex.Message;
+            }
             return serviceResponse;
         }
     }
