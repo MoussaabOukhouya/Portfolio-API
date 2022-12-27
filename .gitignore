@@ -83,3 +83,5 @@ bin/Debug/net7.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
 bin/Debug/net7.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
 bin/Debug/net7.0/AutoMapper.dll
 bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+.vscode/launch.json
+.vscode/tasks.json
