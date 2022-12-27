@@ -24,26 +24,35 @@ public class CertificatController : ControllerBase
     [HttpGet("GetAll")]
     public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> GetALL()
     {
-  
-        var certificat  = _certificatService.GetAllCertificats();
+
+        var certificat = _certificatService.GetAllCertificats();
         return Ok(await certificat);
-   
+
     }
 
     [HttpGet("{Id}")]
     public async Task<ActionResult<ServiceResponse<GetCertificatDto>>> GetCertificatById(int Id)
     {
-  
-        var certificat  = _certificatService.GetCertificatById(Id);
+
+        var certificat = _certificatService.GetCertificatById(Id);
         return Ok(await certificat);
-   
+
     }
 
     [HttpPost()]
     public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> AddCertificat(AddCertificatDto addCertificatDto)
     {
-  
+
         return Ok(await _certificatService.AddCertificat(addCertificatDto));
-   
+
+    }
+    
+    [HttpPut()]
+
+    public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> UpdateCertificat(UpdateCertificatDto updateCertificatDto)
+    {
+
+        return Ok(await _certificatService.UpdateCertificat(updateCertificatDto));
+
     }
 }
