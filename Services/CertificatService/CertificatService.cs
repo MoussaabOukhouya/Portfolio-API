@@ -48,7 +48,7 @@ namespace portfolio.Services.CertificatService
             {
                 var certificat = certificats.FirstOrDefault(c => c.Id == updateCertificatDto.Id);
                 if (certificat is null)
-                    throw new Exception($"The certificat with the Id: '{certificat.Id}' notfound.");
+                    throw new Exception($"The certificat with the Id: '{updateCertificatDto.Id}' is not found.");
 
                 certificat.name = updateCertificatDto.name;
                 certificat.description = updateCertificatDto.description;
