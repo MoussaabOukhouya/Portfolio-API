@@ -12,6 +12,8 @@ namespace portfolio.Services.CertificatService
         Task<ServiceResponse<GetCertificatDto>> GetCertificatById(int Id);
         Task<ServiceResponse<List<GetCertificatDto>>> AddCertificat(AddCertificatDto addCertificatDto);
         Task<ServiceResponse<GetCertificatDto>> UpdateCertificat(UpdateCertificatDto updateCertificatDto);
+        Task<ServiceResponse<List<GetCertificatDto>>> DeleteCertificat(int Id);
+
 
 
         
