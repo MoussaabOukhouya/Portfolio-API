@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using portfolio.dal;
+using portfolio.data;
 using portfolio.DTOs.Certificat;
 using portfolio.models;
 using portfolio.Services.CertificatService;
@@ -51,8 +51,22 @@ public class CertificatController : ControllerBase
 
     public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> UpdateCertificat(UpdateCertificatDto updateCertificatDto)
     {
+        var serviceResponse = await _certificatService.UpdateCertificat(updateCertificatDto);
+        if(serviceResponse.data is null)
+            return NotFound(serviceResponse);
 
         return Ok(await _certificatService.UpdateCertificat(updateCertificatDto));
 
+    }
+
+    [HttpDelete("{Id}")]
+
+    public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> DeleteCertificat( int Id)
+    {
+        var serviceResponse = await _certificatService.DeleteCertificat(Id);
+        if(serviceResponse.data is null)
+            return NotFound(serviceResponse);
+
+        return Ok(await _certificatService.DeleteCertificat(Id));
     }
 }
