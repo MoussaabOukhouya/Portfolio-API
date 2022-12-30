@@ -1,8 +1,8 @@
 using portfolio.models;
 
-namespace portfolio.DTOs.Experience
+namespace portfolio.DTOs.ExperienceDTO
 {
-    public class UpdateExperienceDto
+    public class GetExperienceDto
     {
         public int Id { get; set; }
         public string name { get; set; }

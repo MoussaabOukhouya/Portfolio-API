@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using portfolio.models;
 
-namespace portfolio.DTOs.Experience
+namespace portfolio.DTOs.ExperienceDTO
 {
-    public class GetExperienceDto
+    public class UpdateExperienceDto
     {
         public int Id { get; set; }
         public string name { get; set; }

@@ -1,4 +1,4 @@
-namespace portfolio.DTOs.Certificat
+namespace portfolio.DTOs.CertificatDTO
 {
     public class GetCertificatDto
     {

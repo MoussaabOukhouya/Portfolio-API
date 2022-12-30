@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace portfolio.DTOs.Certificat
+
+namespace portfolio.DTOs.CertificatDTO
 {
     public class UpdateCertificatDto
     {
