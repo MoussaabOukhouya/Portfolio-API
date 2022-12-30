@@ -13,7 +13,6 @@ namespace portfolio.models
         public ICollection<Skill> skills { get; set; }
         public ICollection<Tool> tools { get; set; }
         public ICollection<Certificat> certificats { get; set; }
-
-
+        public ICollection<SocialMedia> socialMedias { get; set; }
     }
 }
