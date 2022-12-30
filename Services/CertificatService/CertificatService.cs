@@ -1,7 +1,7 @@
 
 using AutoMapper;
 using portfolio.data;
-using portfolio.DTOs.Certificat;
+using portfolio.DTOs.CertificatDTO;
 using portfolio.models;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,6 +1,6 @@
 
 
-using portfolio.DTOs.Certificat;
+using portfolio.DTOs.CertificatDTO;
 using portfolio.models;
 
 

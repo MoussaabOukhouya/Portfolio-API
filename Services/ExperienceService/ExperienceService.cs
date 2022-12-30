@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using portfolio.data;
-using portfolio.DTOs.Experience;
+using portfolio.DTOs.ExperienceDTO;
 using portfolio.models;
 
 namespace portfolio.Services.ExperienceService

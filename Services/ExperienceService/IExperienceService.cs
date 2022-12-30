@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using portfolio.DTOs.Experience;
+using portfolio.DTOs.ExperienceDTO;
 using portfolio.models;
 
 namespace portfolio.Services.ExperienceService
