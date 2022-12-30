@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using portfolio.data;
 using portfolio.Services.CertificatService;
+using portfolio.Services.ExperienceService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
-builder.Services.AddScoped<ICertificatService,CertificatService>();
+builder.Services.AddScoped<ICertificatService, CertificatService>();
+builder.Services.AddScoped<IExperienceService, ExperienceService>();
 
 
 var app = builder.Build();

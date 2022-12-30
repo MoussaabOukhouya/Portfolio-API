@@ -12,6 +12,7 @@ namespace portfolio.data
         }
 
         public DbSet<Certificat> certificats => Set<Certificat>();
+        public DbSet<Experience> experiences => Set<Experience>();
         
     }
 
