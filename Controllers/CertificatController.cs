@@ -55,7 +55,7 @@ public class CertificatController : ControllerBase
         if(serviceResponse.data is null)
             return NotFound(serviceResponse);
 
-        return Ok(await _certificatService.UpdateCertificat(updateCertificatDto));
+        return Ok(await _certificatService.GetAllCertificats());
 
     }
 
@@ -67,6 +67,6 @@ public class CertificatController : ControllerBase
         if(serviceResponse.data is null)
             return NotFound(serviceResponse);
 
-        return Ok(await _certificatService.DeleteCertificat(Id));
+        return Ok(await _certificatService.GetAllCertificats());
     }
 }
