@@ -1,9 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using portfolio.data;
-using portfolio.DTOs.Certificat;
+using portfolio.DTOs.CertificatDTO;
 using portfolio.models;
 using portfolio.Services.CertificatService;
-using System.Linq;
 
 
 namespace portfolio.Controllers;
@@ -46,13 +44,13 @@ public class CertificatController : ControllerBase
         return Ok(await _certificatService.AddCertificat(addCertificatDto));
 
     }
-    
+
     [HttpPut()]
 
     public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> UpdateCertificat(UpdateCertificatDto updateCertificatDto)
     {
         var serviceResponse = await _certificatService.UpdateCertificat(updateCertificatDto);
-        if(serviceResponse.data is null)
+        if (serviceResponse.data is null)
             return NotFound(serviceResponse);
 
         return Ok(await _certificatService.GetAllCertificats());
@@ -61,10 +59,10 @@ public class CertificatController : ControllerBase
 
     [HttpDelete("{Id}")]
 
-    public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> DeleteCertificat( int Id)
+    public async Task<ActionResult<ServiceResponse<List<GetCertificatDto>>>> DeleteCertificat(int Id)
     {
         var serviceResponse = await _certificatService.DeleteCertificat(Id);
-        if(serviceResponse.data is null)
+        if (serviceResponse.data is null)
             return NotFound(serviceResponse);
 
         return Ok(await _certificatService.GetAllCertificats());
