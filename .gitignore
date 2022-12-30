@@ -85,3 +85,8 @@ bin/Debug/net7.0/AutoMapper.dll
 bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 .vscode/launch.json
 .vscode/tasks.json
+Migrations/20221230200542_Initial.cs
+Migrations/20221230200542_Initial.Designer.cs
+Migrations/MyDbContextModelSnapshot.cs
+Migrations/MyDbContextModelSnapshot.cs
+obj/portfolio.csproj.EntityFrameworkCore.targets
