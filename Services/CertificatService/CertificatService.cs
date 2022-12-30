@@ -25,7 +25,8 @@ namespace portfolio.Services.CertificatService
         {
             var serviceResponse = new ServiceResponse<List<GetCertificatDto>>();
             var dbCertificats = await _dbContext.certificats.ToListAsync();
-            dbCertificats.Add(_mapper.Map<Certificat>(addCertificatDto));
+            await _dbContext.AddAsync(_mapper.Map<Certificat>(addCertificatDto));
+            await _dbContext.SaveChangesAsync();
             serviceResponse.data = dbCertificats.Select(c => _mapper.Map<GetCertificatDto>(c)).ToList();
             return serviceResponse;
         }
@@ -33,27 +34,24 @@ namespace portfolio.Services.CertificatService
         public async Task<ServiceResponse<List<GetCertificatDto>>> GetAllCertificats()
         {
             var serviceResponse = new ServiceResponse<List<GetCertificatDto>>();
-            var dbCertificats = await _dbContext.certificats.ToListAsync();
-            serviceResponse.data = dbCertificats.Select(c => _mapper.Map<GetCertificatDto>(c)).ToList();
+            serviceResponse.data = await _dbContext.certificats.Select(c => _mapper.Map<GetCertificatDto>(c)).ToListAsync();
             return serviceResponse;
         }
 
         public async Task<ServiceResponse<GetCertificatDto>> GetCertificatById(int Id)
         {
             var serviceResponse = new ServiceResponse<GetCertificatDto>();
-            var dbCertificats = await _dbContext.certificats.ToListAsync();
-            var certificat = dbCertificats.FirstOrDefault(c => c.Id == Id);
-            serviceResponse.data = _mapper.Map<GetCertificatDto>(certificat);
+            var dbCertificats = await _dbContext.certificats.FirstOrDefaultAsync(c => c.Id == Id);
+            serviceResponse.data = _mapper.Map<GetCertificatDto>(dbCertificats);
             return serviceResponse;
         }
 
         public async Task<ServiceResponse<GetCertificatDto>> UpdateCertificat(UpdateCertificatDto updateCertificatDto)
         {
             var serviceResponse = new ServiceResponse<GetCertificatDto>();
-            var dbCertificats = await _dbContext.certificats.ToListAsync();
             try
             {
-                var certificat = dbCertificats.FirstOrDefault(c => c.Id == updateCertificatDto.Id);
+                var certificat = await _dbContext.certificats.FindAsync(updateCertificatDto.Id);
                 if (certificat is null)
                     throw new Exception($"The certificat with the Id: '{updateCertificatDto.Id}' is not found.");
 
@@ -61,6 +59,8 @@ namespace portfolio.Services.CertificatService
                 certificat.description = updateCertificatDto.description;
                 certificat.image = updateCertificatDto.image;
                 certificat.link = updateCertificatDto.link;
+
+                await _dbContext.SaveChangesAsync();
                 serviceResponse.data = _mapper.Map<GetCertificatDto>(certificat);
             }
             catch (Exception ex)
@@ -77,12 +77,13 @@ namespace portfolio.Services.CertificatService
             var dbCertificats = await _dbContext.certificats.ToListAsync();
             try
             {
-                var certificat = dbCertificats.FirstOrDefault(c => c.Id == Id);
+                var certificat = await _dbContext.certificats.FindAsync(Id);
                 if (certificat is null)
-                    throw new Exception($"The certificat with the Id: '{Id}' is not found.");
+                    throw new Exception($"The certifcat with the Id: '{Id}' is not found.");
 
-                dbCertificats.Remove(certificat);
+                _dbContext.certificats.Remove(certificat);
                 serviceResponse.data = dbCertificats.Select(c => _mapper.Map<GetCertificatDto>(c)).ToList();
+                await _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
