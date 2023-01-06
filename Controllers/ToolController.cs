@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using portfolio.DTOs.ToolDTO;
-using portfolio.models;
+using portfolio.Shared;
 using portfolio.Services.ToolService;
 
 namespace portfolio.Controllers

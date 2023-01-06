@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using portfolio.DTOs.CertificatDTO;
-using portfolio.models;
 using portfolio.Services.CertificatService;
-
+using portfolio.Shared;
 
 namespace portfolio.Controllers;
 

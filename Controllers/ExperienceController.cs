@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using portfolio.DTOs.ExperienceDTO;
-using portfolio.models;
+using portfolio.Shared;
 using portfolio.Services.ExperienceService;
 
 namespace portfolio.Controllers

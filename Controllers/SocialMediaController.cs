@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using portfolio.DTOs.SocialMediaDTO;
-using portfolio.models;
+using portfolio.Shared;
 using portfolio.Services.SocialMediaService;
 
 namespace portfolio.Controllers

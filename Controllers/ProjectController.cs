@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using portfolio.DTOs.ProjectDTO;
-using portfolio.models;
+using portfolio.Shared;
 using portfolio.Services.ProjectService;
 
 namespace portfolio.Controllers

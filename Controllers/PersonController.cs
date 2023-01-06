@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using portfolio.DTOs.PersonDTO;
-using portfolio.models;
+using portfolio.Shared;
 using portfolio.Services.PersonService;
 
 namespace portfolio.Controllers

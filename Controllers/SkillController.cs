@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using portfolio.DTOs.SkillDTO;
-using portfolio.models;
+using portfolio.Shared;
 using portfolio.Services.SkillService;
 
 namespace portfolio.Controllers
