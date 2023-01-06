@@ -19,7 +19,7 @@ This portfolio backend is built using .Net 7 and EntityFramework Core 7, with a 
 ## Tech Stack
 
 -  .NET 7.0.1
--   Entity Framework Core 
+-   Entity Framework Core 7.0.1
 -   SQL Server
 -   Swagger UI
 
