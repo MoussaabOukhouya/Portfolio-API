@@ -3,6 +3,7 @@ using portfolio.data;
 using portfolio.DTOs.ProjectDTO;
 using portfolio.models;
 using Microsoft.EntityFrameworkCore;
+using portfolio.Shared;
 
 namespace portfolio.Services.ProjectService
 {

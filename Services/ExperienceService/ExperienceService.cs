@@ -3,6 +3,7 @@ using AutoMapper;
 using portfolio.data;
 using portfolio.DTOs.ExperienceDTO;
 using portfolio.models;
+using portfolio.Shared;
 
 namespace portfolio.Services.ExperienceService
 {

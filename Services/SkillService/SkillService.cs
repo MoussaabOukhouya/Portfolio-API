@@ -3,6 +3,8 @@ using AutoMapper;
 using portfolio.data;
 using portfolio.DTOs.SkillDTO;
 using portfolio.models;
+using portfolio.Shared;
+
 
 namespace portfolio.Services.SkillService
 {

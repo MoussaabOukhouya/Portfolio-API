@@ -7,6 +7,7 @@ using portfolio.data;
 using Microsoft.EntityFrameworkCore;
 using portfolio.DTOs.PersonDTO;
 using portfolio.models;
+using portfolio.Shared;
 
 namespace portfolio.Services.PersonService
 {

@@ -1,7 +1,7 @@
 
 
 using portfolio.DTOs.CertificatDTO;
-using portfolio.models;
+using portfolio.Shared;
 
 
 namespace portfolio.Services.CertificatService

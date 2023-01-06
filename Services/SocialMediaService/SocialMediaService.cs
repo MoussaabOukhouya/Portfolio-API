@@ -3,6 +3,7 @@ using AutoMapper;
 using portfolio.data;
 using portfolio.DTOs.SocialMediaDTO;
 using portfolio.models;
+using portfolio.Shared;
 
 namespace portfolio.Services.SocialMediaService
 {

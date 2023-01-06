@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using portfolio.DTOs.SocialMediaDTO;
-using portfolio.models;
+using portfolio.Shared;
 
 namespace portfolio.Services.SocialMediaService
 {
