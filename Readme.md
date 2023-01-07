@@ -36,7 +36,7 @@ This portfolio backend is built using .Net 7 and EntityFramework Core 7, with a 
 2.  Navigate to the root directory of the project.
 3. Run `dotnet restore` to install the necessary dependencies.
 4.  Run `dotnet build` to build the project.
-5.  Run `dotnet run to` start the backend server.
+5.  Run `dotnet run` to start the backend server.
 
 
 
